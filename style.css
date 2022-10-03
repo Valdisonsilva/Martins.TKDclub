@@ -1,0 +1,537 @@
+@charset "utf-8";
+
+body{
+    background-color: rgb(176, 176, 207);
+   
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30vh 9vh 100vh 60vh 25vh;
+    grid-gap: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+   
+    
+}
+/* logo */
+header{
+    background-image: url(logosemfundo.png);
+    display: inline-flex;
+    grid-column:1/4;
+    grid-row: 1/2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+ 
+    
+    
+}
+ nav{
+    grid-column: 1/18;
+    grid-row: 2/4;
+    
+
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui,-apple-system, Helvetica, Arial, sans-serif;
+    background-color:rgb(16, 31, 97);
+    height: 9vh;
+
+
+
+  
+
+}
+
+a 
+{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+  
+a:hover 
+{
+    opacity: 0.7;
+}
+  
+.logo 
+{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+  
+.nav-list 
+{
+    list-style: none;
+    display: flex;
+}
+  
+.nav-list li
+{
+    letter-spacing: 2px;
+    margin-left: 32px;
+
+
+}
+
+
+  
+.mobile-menu 
+{
+    display: none;
+    cursor: pointer;
+}
+  
+.mobile-menu div
+{
+    width: 32px;
+    height: 2px;
+    background: rgb(231, 227, 227);
+    margin: 8px;
+    transition: 0.3s;
+}
+  
+@media (max-width: 999px)
+{
+
+    body 
+    {
+        overflow-x: hidden;
+    }
+
+    .nav-list
+    {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 20vw;
+        height: 100vh;
+        background: rgb(16, 31, 97);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        
+    }
+
+    .nav-list li
+    {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu 
+    {
+        display: block;
+    }
+}
+  
+.nav-list.active 
+{
+    transform: translateX(0);
+}
+  
+@keyframes navLinkFade 
+{
+    from 
+    {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to
+    {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+  
+.mobile-menu.active .line1
+{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+  
+.mobile-menu.active .line2
+{
+    opacity: 0;
+}
+  
+.mobile-menu.active .line3 
+{
+    transform: rotate(45deg) translate(-5px, -7px);
+
+
+
+}
+
+
+ 
+#titulo{
+    grid-column: 4/18;
+    grid-row: 1/2;
+  
+
+    background-image: url(IMGTITULO6.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 80%;
+}    
+ 
+/*
+
+
+nav{
+    background-color: rgb(250, 245, 245);
+    grid-column: 1/17;
+    grid-row: 2/3;
+    width: 100vw;
+  
+    
+    
+
+
+}
+#ainicio{
+    display: inline-block;
+    background-color: red;
+    height: 30px;
+    width: 135px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 12%;
+    padding: 10px;
+
+
+    
+}
+#horario{
+    display: inline-block;
+    background-color: rgb(13, 112, 224);
+    height: 30px;
+    width: 185px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 3px 3px 1px 1px black;
+ 
+    border-radius: 10%;
+    text-align: center;
+    text-align: bottom;
+   text-decoration: none;
+   border-radius: 12%;
+ 
+    
+
+
+}
+#galeria{
+    display: inline-block;
+    background-color:  rgb(13, 112, 224);
+    height: 30px;
+    width: 185px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 10%;
+    text-decoration: none;
+    border-radius: 12%;
+
+}
+#sobre{
+    display: inline-block;
+    background-color: rgb(13, 112, 224);
+    height: 30px;
+    width: 200px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 10%;
+    text-decoration: none;
+    border-radius: 12%;
+
+
+}
+#mestre{
+    display: inline-block;
+    background-color: rgb(13, 112, 224);
+    height: 30px;
+    width: 185px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 10%;
+    text-decoration: none;
+    border-radius: 12%;
+
+
+}
+
+
+#contato{
+    display: inline-block;
+    background-color: rgb(13, 112, 224);
+    height: 30px;
+    width: 118px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+ 
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 10%;
+    text-decoration: none;
+    border-radius: 12%;
+
+
+}
+
+#facaparte{
+    display: inline-block;
+    background-color: rgb(13, 112, 224);
+    height: 30px;
+    width: 155px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    box-shadow: 3px 3px 1px 1px black;
+    text-align: center;
+    text-align: bottom;
+    border-radius: 10%;
+    text-decoration: none;
+    border-radius: 12%;
+
+
+
+
+} */
+/* foto martins */
+main{
+ 
+    background-image: url(martins14.jpg);
+    grid-column: 1/8;
+    grid-row: 3/4;
+    
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 25px;
+    box-shadow: 10px 7px 20px;
+    border-radius: 10px;
+    background-color: white;
+
+    
+}
+/* texto */
+section{
+    background-color: white;
+
+    text-align-last: 80%;
+    text-align: center;
+    text-align: justify;
+    margin-top: 10%;
+    padding: 5px;
+    grid-column: 8/16;
+    grid-row:3/4;
+    font-size: 100%;
+    box-shadow: 10px 7px 20px;
+    border-radius: 10px;
+    margin-left: 50PX;
+    
+
+    
+
+    
+}
+/* FOTO 1 DA PAGINA PRINCIPAL */
+#a0{
+    background-image: url(martins18.jpg); width: 100%; height: 100%;
+    background-repeat: no-repeat;
+    grid-column: 1/7;
+    grid-row: 4/5;
+   
+    margin-top: 30px;
+    background-size: 65%;
+ 
+    background-position: center;
+    box-shadow: 20px 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+}
+/* FOTO 2 DA PAGINA PRINCIPAL */
+#a1{
+    background-image: url(campeonato.jpg);
+    grid-column: 7/12;
+    grid-row: 4/5;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    background-size: 75%;
+  
+    background-position: center;
+    box-shadow: 20px 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+    
+}
+/* FOTO 3 DA PAGINA PRINCIPAL */
+#a2{
+    background-image: url(exfaixa2.jpg);
+    grid-column: 12/18;
+    grid-row: 4/5;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    background-size: 68%;
+
+    background-position: center;
+    box-shadow: 20px 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+/* galeria de fotos */
+#a3{
+    grid-column: 1/18;
+    grid-row: 3/5;
+
+    box-shadow: 20px 30px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+   
+    
+}
+/* texto  o taekwondo */
+#a4{
+    text-align-last: 30%;
+    text-align: center;
+    text-align: justify;
+    margin-top: 13%;
+    padding: 10px;
+    grid-column: 5/18;
+    grid-row:2/6;
+    font-size:100%;
+    background-color: white;
+    box-shadow: 10px 10px 20px;
+    border-radius: 10px;
+    
+}
+h1{
+    text-align: center;
+    background-color: rgb(152, 152, 245);
+    border: 10px;
+    border-radius: 10px 7px 10px;
+    
+}
+#a5{
+    background-image: url(oie_transparent.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    grid-column: 1/5;
+    grid-row:3/4;
+ 
+
+
+
+}
+/* TEXTO HORARIOS DAS AULAS */
+#a6{
+    background-color: aliceblue;
+    grid-column: 1/18;
+    grid-row:2/5;
+    text-align-last: 30%;
+    text-align: center;
+    text-align: justify;
+    margin-top: 15%;
+    padding: 10%;
+    box-shadow: 10px 7px 20px;
+    border-radius: 10px;
+   
+    font-size: 100%;
+}
+/* SOBRE O MARTINS */
+#a7{
+    
+    background-image: url(martins4.jpg);
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+    grid-column: 1/6;
+    grid-row:3/4;
+    box-shadow: 10px 7px 20px;
+    
+    
+}
+#a8{
+    background-color: white;
+    grid-column: 6/18;
+    grid-row:3/4;
+ 
+    box-shadow: 10px 20px 20px;
+    
+
+
+
+}
+/* CONTATO */
+#a9{
+    background-color: white;
+    grid-column: 1/18;
+    grid-row:3/4;
+    box-shadow: 20px 30px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: rgb(16, 31, 97);
+    grid-column: 1/18;
+    grid-row: 6/7;
+    background-size: 0%;
+    padding: 30px;
+  
+    background-position: 0%;
+    border-radius: 10px;
+
+
+}
